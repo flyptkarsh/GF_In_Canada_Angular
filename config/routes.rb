@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  namespace :api, path: '/', constraints: { subdomain: 'api' } do 
+    resources :girlfriends
+  end 
+ 
+
   resources :girlfriends
 
   devise_for :users
