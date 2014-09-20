@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @girlfriend.name %>
+</p>
+
+<p>
+  <strong>Fav food:</strong>
+  <%= @girlfriend.fav_food %>
+</p>
+
+<p>
+  <strong>Meeting place:</strong>
+  <%= @girlfriend.meeting_place %>
+</p>
+
+<p>
+  <strong>Pet peeve:</strong>
+  <%= @girlfriend.pet_peeve %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @girlfriend.age %>
+</p>
+
+<p>
+  <strong>Turn ons:</strong>
+  <%= @girlfriend.turn_ons %>
+</p>
+
+<p>
+  <strong>Home town:</strong>
+  <%= @girlfriend.home_town %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @girlfriend.hair_color %>
+</p>
+
+<p>
+  <strong>Hobby:</strong>
+  <%= @girlfriend.hobby %>
+</p>
+
+<%= link_to 'Edit', edit_girlfriend_path(@girlfriend) %> |
+<%= link_to 'Back', girlfriends_path %>

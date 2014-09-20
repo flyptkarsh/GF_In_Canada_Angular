@@ -1,0 +1,53 @@
+<%= form_for(@girlfriend) do |f| %>
+  <% if @girlfriend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@girlfriend.errors.count, "error") %> prohibited this girlfriend from being saved:</h2>
+
+      <ul>
+      <% @girlfriend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :fav_food %><br>
+    <%= f.text_field :fav_food %>
+  </div>
+  <div class="field">
+    <%= f.label :meeting_place %><br>
+    <%= f.text_field :meeting_place %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_peeve %><br>
+    <%= f.text_field :pet_peeve %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :turn_ons %><br>
+    <%= f.text_area :turn_ons %>
+  </div>
+  <div class="field">
+    <%= f.label :home_town %><br>
+    <%= f.text_field :home_town %>
+  </div>
+  <div class="field">
+    <%= f.label :hair_color %><br>
+    <%= f.text_field :hair_color %>
+  </div>
+  <div class="field">
+    <%= f.label :hobby %><br>
+    <%= f.text_field :hobby %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
