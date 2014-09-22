@@ -1,2 +1,86 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Girlfriends</h1>
+<div ng-app='girlfriend'> 
+  <div ng-controller='GirlfriendController'>
+    <div>
+    <form name="girlfirend">
+        <strong>Name:</strong>
+        <input ng-model="girlfriend.name">
+        <br>
+        <strong>Fav food:</strong>
+        <input ng-model="girlfriend.fav_food">
+        <br>
+        <strong>Meeting place:</strong>
+        <input ng-model="girlfriend.meeting_place">
+        <br>
+        <strong>Pet peeve:</strong>
+        <input ng-model="girlfriend.pet_peeve">
+        <br>
+        <strong>Age:</strong>
+        <input ng-model="girlfriend.age">
+        <br>
+        <strong>Turn ons:</strong>
+        <input ng-model="girlfriend.turn_ons">
+        <br>
+        <strong>Home town:</strong>
+        <input ng-model="girlfriend.home_town">
+        <br>
+        <strong>Hair color:</strong>
+        <input ng-model="girlfriend.hair_color">
+        <br>
+        <strong>Hobby:</strong>
+        <input ng-model="girlfriend.hobby">
+        <br>
+        <button ng-click="addGirlfriend(girlfriend)">Add Your Girlfriend</button>
+
+    </form>
+    </div>
+    <div ng-repeat="Resource in girlfriends">
+      <p> 
+        <strong>Name:</strong>
+        {{ Resource.name}}
+      </p>
+
+      <p>
+        <strong>Fav food:</strong>
+        {{ Resource.fav_food}}
+      </p>
+
+      <p>
+        <strong>Meeting place:</strong>
+        {{ Resource.meeting_place}}
+      </p>
+
+      <p>
+        <strong>Pet peeve:</strong>
+        {{ Resource.pet_peeve}}
+      </p>
+
+      <p>
+        <strong>Age:</strong>
+        {{ Resource.age}}
+      </p>
+
+      <p>
+        <strong>Turn ons:</strong>
+        {{ Resource.turn_ons}}
+      </p>
+
+      <p>
+        <strong>Home town:</strong>
+        {{ Resource.home_town}}
+      </p>
+
+      <p>
+        <strong>Hair color:</strong>
+        {{ Resource.hair_color}}
+      </p>
+
+      <p>
+        <strong>Hobby:</strong>
+        {{ Resource.hobby}}
+      </p>
+      <button ng-click="deleteGirlfriend(Resource.id)">Delete {{Resource.name}}</button>
+  </div>
+
+
+</div>

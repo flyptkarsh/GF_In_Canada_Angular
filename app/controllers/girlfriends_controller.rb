@@ -1,24 +1,15 @@
 class GirlfriendsController < ApplicationController
-  before_action :set_girlfriend, only: [:show, :edit, :update, :destroy]
-
+  protect_from_forgery :except => [ :create, :update, :destroy]
   # GET /girlfriends
   # GET /girlfriends.json
   def index
-    @girlfriends = Girlfriend.all
+    render json: Girlfriend.all
   end
 
   # GET /girlfriends/1
   # GET /girlfriends/1.json
   def show
-  end
-
-  # GET /girlfriends/new
-  def new
-    @girlfriend = Girlfriend.new
-  end
-
-  # GET /girlfriends/1/edit
-  def edit
+    render json: @girlfriend.to_json, status: 200 
   end
 
   # POST /girlfriends
@@ -54,7 +45,7 @@ class GirlfriendsController < ApplicationController
   # DELETE /girlfriends/1
   # DELETE /girlfriends/1.json
   def destroy
-    @girlfriend.destroy
+    Girlfriend.delete(params[:id])
     respond_to do |format|
       format.html { redirect_to girlfriends_url, notice: 'Girlfriend was successfully destroyed.' }
       format.json { head :no_content }
@@ -62,11 +53,6 @@ class GirlfriendsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_girlfriend
-      @girlfriend = Girlfriend.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def girlfriend_params
       params.require(:girlfriend).permit(:name, :fav_food, :meeting_place, :pet_peeve, :age, :turn_ons, :home_town, :hair_color, :hobby)
