@@ -4,6 +4,8 @@ Currently under construction…
 
 To further Explore angular.js and TDD I am remaking my Rails app from last week, Girlfriend in Canada, as a single page app.
 
+==Javascript and CSS
 This is a Rails 4 application that uses Angular.js and Foundation.
 
 For testing it will also use Jasmine, Factory Girl, RSpec, and Capaybara.
+
